@@ -198,9 +198,383 @@
 <li>&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;mall</li>
 <li>&#x5BFC;&#x5165;mall&#x7684;&#x6570;&#x636E;&#x5E93;&#x811A;&#x672C;&#xFF0C;&#x811A;&#x672C;&#x5730;&#x5740;&#xFF1A;<a href="https://github.com/macrozheng/mall-learning/blob/master/document/sql/mall.sql" target="_blank">https://github.com/macrozheng/mall-learning/blob/master/document/sql/mall.sql</a></li>
 </ul>
+<h2 id="&#x9879;&#x76EE;&#x4F7F;&#x7528;&#x6846;&#x67B6;&#x4ECB;&#x7ECD;">&#x9879;&#x76EE;&#x4F7F;&#x7528;&#x6846;&#x67B6;&#x4ECB;&#x7ECD;</h2>
+<h3 id="springboot">SpringBoot</h3>
+<blockquote>
+<p>SpringBoot&#x53EF;&#x4EE5;&#x8BA9;&#x4F60;&#x5FEB;&#x901F;&#x6784;&#x5EFA;&#x57FA;&#x4E8E;Spring&#x7684;Web&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x5185;&#x7F6E;&#x591A;&#x79CD;Web&#x5BB9;&#x5668;(&#x5982;Tomcat)&#xFF0C;&#x901A;&#x8FC7;&#x542F;&#x52A8;&#x5165;&#x53E3;&#x7A0B;&#x5E8F;&#x7684;main&#x51FD;&#x6570;&#x5373;&#x53EF;&#x8FD0;&#x884C;&#x3002;</p>
+</blockquote>
+<h3 id="pagerhelper">PagerHelper</h3>
+<blockquote>
+<p>MyBatis&#x5206;&#x9875;&#x63D2;&#x4EF6;&#xFF0C;&#x7B80;&#x5355;&#x7684;&#x51E0;&#x884C;&#x4EE3;&#x7801;&#x5C31;&#x80FD;&#x5B9E;&#x73B0;&#x5206;&#x9875;&#xFF0C;&#x5728;&#x4E0E;SpringBoot&#x6574;&#x5408;&#x65F6;&#xFF0C;&#x53EA;&#x8981;&#x6574;&#x5408;&#x4E86;PagerHelper&#x5C31;&#x81EA;&#x52A8;&#x6574;&#x5408;&#x4E86;MyBatis&#x3002;</p>
+</blockquote>
+<pre><code class="lang-java">PageHelper.startPage(pageNum, pageSize);
+<span class="hljs-comment">//&#x4E4B;&#x540E;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#x5C06;&#x81EA;&#x52A8;&#x8FDB;&#x884C;&#x5206;&#x9875;</span>
+List&lt;PmsBrand&gt; brandList = brandMapper.selectByExample(<span class="hljs-keyword">new</span> PmsBrandExample());
+<span class="hljs-comment">//&#x901A;&#x8FC7;&#x6784;&#x9020;PageInfo&#x5BF9;&#x8C61;&#x83B7;&#x53D6;&#x5206;&#x9875;&#x4FE1;&#x606F;&#xFF0C;&#x5982;&#x5F53;&#x524D;&#x9875;&#x7801;&#xFF0C;&#x603B;&#x9875;&#x6570;&#xFF0C;&#x603B;&#x6761;&#x6570;</span>
+PageInfo&lt;PmsBrand&gt; pageInfo = <span class="hljs-keyword">new</span> PageInfo&lt;PmsBrand&gt;(list);
+</code></pre>
+<h3 id="druid">Druid</h3>
+<blockquote>
+<p>alibaba&#x5F00;&#x6E90;&#x7684;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#x6C60;&#xFF0C;&#x53F7;&#x79F0;Java&#x8BED;&#x8A00;&#x4E2D;&#x6700;&#x597D;&#x7684;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#x6C60;&#x3002;</p>
+</blockquote>
+<h3 id="mybatis-generator">Mybatis generator</h3>
+<blockquote>
+<p>MyBatis&#x7684;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5668;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x6570;&#x636E;&#x5E93;&#x751F;&#x6210;model&#x3001;mapper.xml&#x3001;mapper&#x63A5;&#x53E3;&#x548C;Example&#xFF0C;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x7684;&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x4E0D;&#x7528;&#x518D;&#x624B;&#x5199;mapper&#x3002;</p>
+</blockquote>
 <h2 id="&#x9879;&#x76EE;&#x642D;&#x5EFA;">&#x9879;&#x76EE;&#x642D;&#x5EFA;</h2>
 <h3 id="&#x4F7F;&#x7528;idea&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;springboot&#x9879;&#x76EE;">&#x4F7F;&#x7528;IDEA&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;SpringBoot&#x9879;&#x76EE;</h3>
-<p><img src="img.png" alt="img.png"></p>
+<p><img src="create_project_img.png" alt="img.png"></p>
+<h3 id="&#x6DFB;&#x52A0;&#x9879;&#x76EE;&#x4F9D;&#x8D56;">&#x6DFB;&#x52A0;&#x9879;&#x76EE;&#x4F9D;&#x8D56;</h3>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">project</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+         <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">modelVersion</span>&gt;</span>4.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">modelVersion</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">parent</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.3.5.RELEASE<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">relativePath</span>/&gt;</span> <span class="hljs-comment">&lt;!-- lookup parent from repository --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">parent</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.example.mall<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>learning-mall-01<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>learning-mall-01<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">description</span>&gt;</span>Demo project for Spring Boot<span class="hljs-tag">&lt;/<span class="hljs-name">description</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">properties</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">java.version</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-name">java.version</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">properties</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">exclusions</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">exclusion</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.junit.vintage<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>junit-vintage-engine<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">exclusion</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">exclusions</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.github.pagehelper<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>pagehelper-spring-boot-starter<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.3.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.alibaba<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>druid-spring-boot-starter<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.1.22<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.mybatis.generator<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mybatis-generator-core<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.4.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>mysql<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mysql-connector-java<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>8.0.21<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">build</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">plugins</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">plugins</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">build</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">project</span>&gt;</span>
+</code></pre>
+<h3 id="&#x4FEE;&#x6539;springboot&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x4FEE;&#x6539;SpringBoot&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
+<blockquote>
+<p>&#x5728;application.yml&#x4E2D;&#x6DFB;&#x52A0;&#x6570;&#x636E;&#x6E90;&#x914D;&#x7F6E;&#x548C;MyBatis&#x7684;mapper.xml&#x7684;&#x8DEF;&#x5F84;&#x914D;&#x7F6E;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-yaml"><span class="hljs-attr">server:</span>
+<span class="hljs-attr">  port:</span> <span class="hljs-number">8080</span>
+
+<span class="hljs-attr">spring:</span>
+<span class="hljs-attr">  datasource:</span>
+<span class="hljs-attr">    url:</span> jdbc:mysql://localhost:<span class="hljs-number">3306</span>/mall?useUnicode=<span class="hljs-literal">true</span>&amp;characterEncoding=utf<span class="hljs-bullet">-8</span>&amp;serverTimezone=Asia/Shanghai
+<span class="hljs-attr">    username:</span> root
+<span class="hljs-attr">    password:</span> root
+
+<span class="hljs-attr">mybatis:</span>
+<span class="hljs-attr">  mapper-locations:</span>
+<span class="hljs-attr">    - classpath:</span>mapper/*.xml
+<span class="hljs-bullet">    -</span> classpath*:com/**/mapper/*.xml
+</code></pre>
+<h3 id="&#x9879;&#x76EE;&#x7ED3;&#x6784;&#x8BF4;&#x660E;">&#x9879;&#x76EE;&#x7ED3;&#x6784;&#x8BF4;&#x660E;</h3>
+<p><img src="folder_structure.png" alt=""></p>
+<h3 id="mybatis-generator-&#x914D;&#x7F6E;&#x6587;&#x4EF6;">Mybatis generator &#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
+<blockquote>
+<p>&#x914D;&#x7F6E;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#xFF0C;Mybatis generator&#x751F;&#x6210;model&#x3001;mapper&#x63A5;&#x53E3;&#x53CA;mapper.xml&#x7684;&#x8DEF;&#x5F84;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span> <span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-meta">&lt;!DOCTYPE generatorConfiguration PUBLIC
+        &quot;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&quot;
+        &quot;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">generatorConfiguration</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">properties</span> <span class="hljs-attr">resource</span>=<span class="hljs-string">&quot;generator.properties&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">context</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;MySqlContext&quot;</span> <span class="hljs-attr">targetRuntime</span>=<span class="hljs-string">&quot;MyBatis3&quot;</span> <span class="hljs-attr">defaultModelType</span>=<span class="hljs-string">&quot;flat&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;beginningDelimiter&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;`&quot;</span>/&gt;</span>
+        <span class="hljs-comment">&lt;!--        &#x6A21;&#x578B;&#x751F;&#x6210;&#x5E8F;&#x5217;&#x5316;&#x65B9;&#x6CD5;--&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">plugin</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;org.mybatis.generator.plugins.SerializablePlugin&quot;</span>/&gt;</span>
+        <span class="hljs-comment">&lt;!--        &#x6A21;&#x578B;&#x751F;&#x6210;toString&#x7684;&#x65B9;&#x6CD5;--&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">plugin</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;org.mybatis.generator.plugins.ToStringPlugin&quot;</span>/&gt;</span>
+        <span class="hljs-comment">&lt;!--        &#x751F;&#x6210;model&#x7684;&#x6CE8;&#x91CA;&#x8BBE;&#x7F6E;--&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">commentGenerator</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;com.example.mall.learning.mbg.CommentGenerator&quot;</span>&gt;</span>
+            <span class="hljs-comment">&lt;!-- &#x662F;&#x5426;&#x53BB;&#x9664;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;&#x6CE8;&#x91CA; true&#xFF1A;&#x662F; &#xFF1A; false:&#x5426; --&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;suppressAllComment&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;true&quot;</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;suppressDate&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;true&quot;</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;addRemarkComments&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;true&quot;</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">commentGenerator</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">jdbcConnection</span> <span class="hljs-attr">driverClass</span>=<span class="hljs-string">&quot;${jdbc.driverClass}&quot;</span> <span class="hljs-attr">connectionURL</span>=<span class="hljs-string">&quot;${jdbc.url}&quot;</span> <span class="hljs-attr">userId</span>=<span class="hljs-string">&quot;${jdbc.username}&quot;</span>
+                        <span class="hljs-attr">password</span>=<span class="hljs-string">&quot;${jdbc.password}&quot;</span>&gt;</span>
+            <span class="hljs-comment">&lt;!--&#x89E3;&#x51B3;mysql&#x9A71;&#x52A8;&#x5347;&#x7EA7;&#x5230;8.0&#x540E;&#x4E0D;&#x751F;&#x6210;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x5E93;&#x4EE3;&#x7801;&#x7684;&#x95EE;&#x9898;--&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;nullCatalogMeansCurrent&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">jdbcConnection</span>&gt;</span>
+        <span class="hljs-comment">&lt;!--        &#x751F;&#x6210;module&#x7684;&#x8DEF;&#x5F84;--&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">javaModelGenerator</span> <span class="hljs-attr">targetPackage</span>=<span class="hljs-string">&quot;com.example.mall.learning.mbg.model&quot;</span> <span class="hljs-attr">targetProject</span>=<span class="hljs-string">&quot;src/main/java&quot;</span>/&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">sqlMapGenerator</span> <span class="hljs-attr">targetPackage</span>=<span class="hljs-string">&quot;com.example.mall.learning.mbg.mapper&quot;</span> <span class="hljs-attr">targetProject</span>=<span class="hljs-string">&quot;src/main/resources&quot;</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">javaClientGenerator</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;XMLMAPPER&quot;</span> <span class="hljs-attr">targetPackage</span>=<span class="hljs-string">&quot;com.example.mall.learning.mbg.mapper&quot;</span> <span class="hljs-attr">targetProject</span>=<span class="hljs-string">&quot;src/main/java&quot;</span>/&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">tableName</span>=<span class="hljs-string">&quot;pms_brand&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">generatedKey</span> <span class="hljs-attr">column</span>=<span class="hljs-string">&quot;id&quot;</span> <span class="hljs-attr">sqlStatement</span>=<span class="hljs-string">&quot;MySql&quot;</span> <span class="hljs-attr">identity</span>=<span class="hljs-string">&quot;true&quot;</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">context</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">generatorConfiguration</span>&gt;</span>
+</code></pre>
+<h3 id="&#x8FD0;&#x884C;generator&#x7684;main&#x51FD;&#x6570;&#x751F;&#x6210;&#x4EE3;&#x7801;">&#x8FD0;&#x884C;Generator&#x7684;main&#x51FD;&#x6570;&#x751F;&#x6210;&#x4EE3;&#x7801;</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.example.mall.learning.mbg;
+
+<span class="hljs-keyword">import</span> org.mybatis.generator.api.MyBatisGenerator;
+<span class="hljs-keyword">import</span> org.mybatis.generator.config.Configuration;
+<span class="hljs-keyword">import</span> org.mybatis.generator.config.xml.ConfigurationParser;
+<span class="hljs-keyword">import</span> org.mybatis.generator.internal.DefaultShellCallback;
+
+<span class="hljs-keyword">import</span> java.io.InputStream;
+<span class="hljs-keyword">import</span> java.util.ArrayList;
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Generator</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        <span class="hljs-comment">//MGB &#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x8B66;&#x544A;</span>
+        List&lt;String&gt; warnings = <span class="hljs-keyword">new</span> ArrayList&lt;String&gt;();
+        <span class="hljs-comment">// &#x8986;&#x76D6;</span>
+        <span class="hljs-keyword">boolean</span> overwrite = <span class="hljs-keyword">true</span>;
+        <span class="hljs-comment">// &#x8BFB;&#x53D6;MBG&#x914D;&#x7F6E;&#x6587;&#x4EF6;</span>
+        InputStream is = Generator.class.getResourceAsStream(<span class="hljs-string">&quot;/generatorConfig.xml&quot;</span>);
+        ConfigurationParser cp = <span class="hljs-keyword">new</span> ConfigurationParser(warnings);
+        Configuration config = cp.parseConfiguration(is);
+        is.close();
+
+        DefaultShellCallback callback = <span class="hljs-keyword">new</span> DefaultShellCallback(overwrite);
+        <span class="hljs-comment">// &#x521B;&#x5EFA;MBG</span>
+        MyBatisGenerator myBatisGenerator = <span class="hljs-keyword">new</span> MyBatisGenerator(config, callback, warnings);
+        <span class="hljs-comment">// &#x6267;&#x884C;</span>
+        myBatisGenerator.generate(<span class="hljs-keyword">null</span>);
+        <span class="hljs-comment">// &#x8F93;&#x51FA;&#x8B66;&#x544A;</span>
+        <span class="hljs-keyword">for</span>(String warnging: warnings) {
+            System.out.println(warnging);
+        }
+    }
+}
+</code></pre>
+<h3 id="&#x6DFB;&#x52A0;mybatis&#x7684;java&#x914D;&#x7F6E;">&#x6DFB;&#x52A0;MyBatis&#x7684;Java&#x914D;&#x7F6E;</h3>
+<blockquote>
+<p>&#x7528;&#x4E8E;&#x914D;&#x7F6E;&#x9700;&#x8981;&#x52A8;&#x6001;&#x751F;&#x6210;&#x7684;mapper&#x63A5;&#x53E3;&#x7684;&#x8DEF;&#x5F84;</p>
+</blockquote>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.example.mall.learning.config;
+
+<span class="hljs-keyword">import</span> org.mybatis.spring.annotation.MapperScan;
+<span class="hljs-keyword">import</span> org.springframework.context.annotation.Configuration;
+
+<span class="hljs-meta">@Configuration</span>
+<span class="hljs-meta">@MapperScan</span>(value = <span class="hljs-string">&quot;com.example.mall.learning.mbg.mapper&quot;</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyBatisConfig</span> </span>{
+}
+</code></pre>
+<h3 id="&#x5B9E;&#x73B0;controller&#x4E2D;&#x7684;&#x63A5;&#x53E3;">&#x5B9E;&#x73B0;Controller&#x4E2D;&#x7684;&#x63A5;&#x53E3;</h3>
+<blockquote>
+<p>&#x5B9E;&#x73B0;PmsBrand&#x8868;&#x4E2D;&#x7684;&#x6DFB;&#x52A0;&#x3001;&#x4FEE;&#x6539;&#x3001;&#x5220;&#x9664;&#x53CA;&#x5206;&#x9875;&#x67E5;&#x8BE2;&#x63A5;&#x53E3;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.example.mall.learning.controller;
+
+<span class="hljs-keyword">import</span> com.example.mall.learning.common.api.CommonPage;
+<span class="hljs-keyword">import</span> com.example.mall.learning.common.api.CommonResult;
+<span class="hljs-keyword">import</span> com.example.mall.learning.mbg.model.PmsBrand;
+<span class="hljs-keyword">import</span> com.example.mall.learning.service.PmsBrandService;
+<span class="hljs-keyword">import</span> org.slf4j.Logger;
+<span class="hljs-keyword">import</span> org.slf4j.LoggerFactory;
+<span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Controller;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.*;
+
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-meta">@Controller</span>
+<span class="hljs-meta">@RequestMapping</span>(<span class="hljs-string">&quot;/brand&quot;</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PmsBrandController</span> </span>{
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> PmsBrandService demoService;
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Logger LOGGER = LoggerFactory.getLogger(PmsBrandController.class);
+
+    <span class="hljs-meta">@RequestMapping</span>(value = <span class="hljs-string">&quot;listAll&quot;</span>, method = RequestMethod.GET)
+    <span class="hljs-meta">@ResponseBody</span>
+    <span class="hljs-keyword">public</span> CommonResult&lt;List&lt;PmsBrand&gt;&gt; getBrandList() {
+        List&lt;PmsBrand&gt; brandList = demoService.listAllBrand();
+        <span class="hljs-keyword">return</span> CommonResult.success(brandList);
+    }
+
+    <span class="hljs-meta">@RequestMapping</span>(value = <span class="hljs-string">&quot;/create&quot;</span>, method = RequestMethod.POST)
+    <span class="hljs-meta">@ResponseBody</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> CommonResult <span class="hljs-title">createBrand</span><span class="hljs-params">(@RequestBody PmsBrand pmsBrand)</span> </span>{
+        CommonResult commonResult;
+        <span class="hljs-keyword">int</span> count = demoService.createBrand(pmsBrand);
+        <span class="hljs-keyword">if</span> (count == <span class="hljs-number">1</span>) {
+            commonResult = CommonResult.success(pmsBrand);
+        } <span class="hljs-keyword">else</span> {
+            commonResult = CommonResult.failed(<span class="hljs-string">&quot;&#x64CD;&#x4F5C;&#x5931;&#x8D25;&quot;</span>);
+        }
+        LOGGER.debug(<span class="hljs-string">&quot;create Brand &quot;</span> + (count == <span class="hljs-number">1</span> ? <span class="hljs-string">&quot;success&quot;</span> : <span class="hljs-string">&quot;failed&quot;</span>) + <span class="hljs-string">&quot;:{}&quot;</span>, pmsBrand);
+        <span class="hljs-keyword">return</span> commonResult;
+    }
+
+    <span class="hljs-meta">@RequestMapping</span>(value = <span class="hljs-string">&quot;/update/{id}&quot;</span>, method = RequestMethod.POST)
+    <span class="hljs-meta">@ResponseBody</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> CommonResult <span class="hljs-title">updateBrand</span><span class="hljs-params">(@PathVariable(<span class="hljs-string">&quot;id&quot;</span>)</span> Long id, @RequestBody PmsBrand pmsBrand) </span>{
+        CommonResult commonResult;
+        <span class="hljs-keyword">int</span> count = demoService.updateBrand(id, pmsBrand);
+        commonResult = count == <span class="hljs-number">1</span> ? CommonResult.success(pmsBrand) : CommonResult.failed(<span class="hljs-string">&quot;&#x64CD;&#x4F5C;&#x5931;&#x8D25;&quot;</span>);
+        LOGGER.debug(<span class="hljs-string">&quot;update Brand &quot;</span> + (count == <span class="hljs-number">1</span> ? <span class="hljs-string">&quot;success&quot;</span> : <span class="hljs-string">&quot;failed&quot;</span>) + <span class="hljs-string">&quot;:{}&quot;</span>, pmsBrand);
+        <span class="hljs-keyword">return</span> commonResult;
+    }
+
+    <span class="hljs-meta">@RequestMapping</span>(value = <span class="hljs-string">&quot;/delete/{id}&quot;</span>, method = RequestMethod.GET)
+    <span class="hljs-meta">@ResponseBody</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> CommonResult <span class="hljs-title">deleteBrand</span><span class="hljs-params">(@PathVariable(<span class="hljs-string">&quot;id&quot;</span>)</span> Long id) </span>{
+        <span class="hljs-keyword">int</span> count = demoService.deleteBrand(id);
+        <span class="hljs-keyword">boolean</span> isSuccess = count == <span class="hljs-number">1</span>;
+        LOGGER.debug(<span class="hljs-string">&quot;delete Brand &quot;</span> + (isSuccess ? <span class="hljs-string">&quot;success&quot;</span> : <span class="hljs-string">&quot;failed&quot;</span>) + <span class="hljs-string">&quot;:id={}&quot;</span>, id);
+        <span class="hljs-keyword">return</span> isSuccess ? CommonResult.success(<span class="hljs-keyword">null</span>) : CommonResult.failed(<span class="hljs-string">&quot;&#x64CD;&#x4F5C;&#x5931;&#x8D25;&quot;</span>);
+    }
+
+    <span class="hljs-meta">@RequestMapping</span>(value = <span class="hljs-string">&quot;/list&quot;</span>, method = RequestMethod.GET)
+    <span class="hljs-meta">@ResponseBody</span>
+    <span class="hljs-keyword">public</span> CommonResult&lt;CommonPage&lt;PmsBrand&gt;&gt; listBrand(<span class="hljs-meta">@RequestParam</span>(value = <span class="hljs-string">&quot;pageNum&quot;</span>, defaultValue = <span class="hljs-string">&quot;1&quot;</span>) Integer pageNum, <span class="hljs-meta">@RequestParam</span>(value = <span class="hljs-string">&quot;pageSize&quot;</span>, defaultValue = <span class="hljs-string">&quot;10&quot;</span>) Integer pageSize) {
+        List&lt;PmsBrand&gt; brandList = demoService.listBrand(pageNum, pageSize);
+        <span class="hljs-keyword">return</span> CommonResult.success(CommonPage.resetPage(brandList));
+    }
+
+    <span class="hljs-meta">@RequestMapping</span>(value = <span class="hljs-string">&quot;/{id}&quot;</span>, method = RequestMethod.GET)
+    <span class="hljs-meta">@ResponseBody</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> CommonResult&lt;PmsBrand&gt; <span class="hljs-title">brand</span><span class="hljs-params">(@PathVariable(<span class="hljs-string">&quot;id&quot;</span>)</span> <span class="hljs-keyword">long</span> id) </span>{
+        <span class="hljs-keyword">return</span> CommonResult.success(demoService.getBrand(id));
+    }
+}
+</code></pre>
+<h3 id="&#x6DFB;&#x52A0;service&#x63A5;&#x53E3;">&#x6DFB;&#x52A0;Service&#x63A5;&#x53E3;</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.example.mall.learning.service;
+
+<span class="hljs-keyword">import</span> com.example.mall.learning.mbg.model.PmsBrand;
+
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">PmsBrandService</span> </span>{
+    <span class="hljs-function">List&lt;PmsBrand&gt; <span class="hljs-title">listAllBrand</span><span class="hljs-params">()</span></span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">createBrand</span><span class="hljs-params">(PmsBrand brand)</span></span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">updateBrand</span><span class="hljs-params">(Long id, PmsBrand brand)</span></span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">deleteBrand</span><span class="hljs-params">(Long id)</span></span>;
+
+    <span class="hljs-function">List&lt;PmsBrand&gt; <span class="hljs-title">listBrand</span><span class="hljs-params">(<span class="hljs-keyword">int</span> pageNum, <span class="hljs-keyword">int</span> pageSize)</span></span>;
+
+    <span class="hljs-function">PmsBrand <span class="hljs-title">getBrand</span><span class="hljs-params">(Long id)</span></span>;
+}
+</code></pre>
+<h3 id="&#x5B9E;&#x73B0;service&#x63A5;&#x53E3;">&#x5B9E;&#x73B0;Service&#x63A5;&#x53E3;</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.example.mall.learning.service.impl;
+
+<span class="hljs-keyword">import</span> com.example.mall.learning.mbg.mapper.PmsBrandMapper;
+<span class="hljs-keyword">import</span> com.example.mall.learning.mbg.model.PmsBrand;
+<span class="hljs-keyword">import</span> com.example.mall.learning.mbg.model.PmsBrandExample;
+<span class="hljs-keyword">import</span> com.example.mall.learning.service.PmsBrandService;
+<span class="hljs-keyword">import</span> com.github.pagehelper.PageHelper;
+<span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Service;
+
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PmsBrandServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">PmsBrandService</span> </span>{
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> PmsBrandMapper brandMapper;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;PmsBrand&gt; <span class="hljs-title">listAllBrand</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> brandMapper.selectByExample(<span class="hljs-keyword">new</span> PmsBrandExample());
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">createBrand</span><span class="hljs-params">(PmsBrand brand)</span> </span>{
+        <span class="hljs-keyword">return</span> brandMapper.insertSelective(brand);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">updateBrand</span><span class="hljs-params">(Long id, PmsBrand brand)</span> </span>{
+        brand.setId(id);
+        <span class="hljs-keyword">return</span> brandMapper.updateByPrimaryKeySelective(brand);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">deleteBrand</span><span class="hljs-params">(Long id)</span> </span>{
+        <span class="hljs-keyword">return</span> brandMapper.deleteByPrimaryKey(id);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;PmsBrand&gt; <span class="hljs-title">listBrand</span><span class="hljs-params">(<span class="hljs-keyword">int</span> pageNum, <span class="hljs-keyword">int</span> pageSize)</span> </span>{
+        PageHelper.startPage(pageNum, pageSize);
+        <span class="hljs-keyword">return</span> brandMapper.selectByExample(<span class="hljs-keyword">new</span> PmsBrandExample());
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> PmsBrand <span class="hljs-title">getBrand</span><span class="hljs-params">(Long id)</span> </span>{
+        <span class="hljs-keyword">return</span> brandMapper.selectByPrimaryKey(id);
+    }
+}
+</code></pre>
+<h2 id="&#x9879;&#x76EE;&#x6E90;&#x7801;&#x5730;&#x5740;">&#x9879;&#x76EE;&#x6E90;&#x7801;&#x5730;&#x5740;</h2>
+<p><a href="https://github.com/mmmy/learning-mall/tree/main/learning-mall-01" target="_blank">https://github.com/mmmy/learning-mall/tree/main/learning-mall-01</a></p>
 
                                 
                                 </section>
@@ -252,7 +626,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"mall整合SpringBoot+MyBatis搭建基本骨架","level":"1.2.1","depth":2,"previous":{"title":"架构篇","level":"1.2","depth":1,"ref":"","articles":[{"title":"mall整合SpringBoot+MyBatis搭建基本骨架","level":"1.2.1","depth":2,"path":"architecture/arch_01.md","ref":"architecture/arch_01.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","-lunr","search-pro","github","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/mmmy"},"search-pro":{},"splitter":{},"highlight":{},"search":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mall doc","gitbook":"*"},"file":{"path":"architecture/arch_01.md","mtime":"2020-11-29T13:46:44.800Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-29T14:00:43.216Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"mall整合SpringBoot+MyBatis搭建基本骨架","level":"1.2.1","depth":2,"previous":{"title":"架构篇","level":"1.2","depth":1,"ref":"","articles":[{"title":"mall整合SpringBoot+MyBatis搭建基本骨架","level":"1.2.1","depth":2,"path":"architecture/arch_01.md","ref":"architecture/arch_01.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","-lunr","search-pro","github","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/mmmy"},"search-pro":{},"splitter":{},"highlight":{},"search":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mall doc","gitbook":"*"},"file":{"path":"architecture/arch_01.md","mtime":"2020-11-29T15:13:42.023Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-29T15:15:11.434Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

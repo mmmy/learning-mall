@@ -1,0 +1,15 @@
+{
+  "title": "mall doc",
+  "plugins": [
+    "-sharing",
+    "-lunr",
+    "search-pro",
+    "github",
+    "splitter"
+  ],
+  "pluginsConfig": {
+    "github": {
+      "url": "https://github.com/mmmy"
+    }
+  }
+}

@@ -32,7 +32,7 @@ PageInfo<PmsBrand> pageInfo = new PageInfo<PmsBrand>(list);
 ## 项目搭建
 
 ### 使用IDEA初始化一个SpringBoot项目
-![img.png](create_project_img.png)
+![img.png](1/create_project_img.png)
 
 ### 添加项目依赖
 ```xml
@@ -142,7 +142,7 @@ mybatis:
 ```
 
 ### 项目结构说明
-![](folder_structure.png)
+![](1/folder_structure.png)
 
 ### Mybatis generator 配置文件
 >配置数据库连接，Mybatis generator生成model、mapper接口及mapper.xml的路径。
